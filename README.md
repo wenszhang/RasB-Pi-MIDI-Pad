@@ -3,4 +3,4 @@ Raspberry Pi MIDI Pad
 
 https://docs.google.com/document/d/1fQhBkI4SVMC4uNakCQWMFvp8g2GSdomZdZZKRPnr0EQ
 
-https://github.com/settings/installations/630420
+https://github.com/apps/pull
