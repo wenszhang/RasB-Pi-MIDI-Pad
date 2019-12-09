@@ -1,4 +1,4 @@
-package main;
+package PI_ano;
 
 import javax.sound.midi.*;
 import java.awt.event.KeyEvent;
@@ -35,21 +35,22 @@ public class PI_ano extends TimerTask {
         }
     }
 
-    public void changeInstrument(int delta){
+    public void changeInstrument(int delta) {
         instrument += delta;
-        if(instrument > 127){
+        if (instrument > 127) {
             instrument = 0;
-        } else if (instrument < 0){
+        } else if (instrument < 0) {
             instrument = 127;
         }
         midiSynth.loadInstrument(instr[instrument]);
         mChannels[0].programChange(instr[instrument].getPatch().getProgram());
     }
+
     public void run() {
         for (int freq : noteMap.keySet()) {
             System.out.println(noteMap.get(freq));
             if (noteMap.get(freq) > 0) {
-                noteMap.put(freq, noteMap.get(freq)-1);
+                noteMap.put(freq, noteMap.get(freq) - 1);
                 mChannels[0].noteOn(freq, noteMap.get(freq));
             }
 
@@ -75,7 +76,7 @@ public class PI_ano extends TimerTask {
 
 
 //    public static void main(String[] args) {
-//        main.PI_ano piano = new main.PI_ano();
+//        PI_ano.PI_ano piano = new PI_ano.PI_ano();
 //        piano.playSound(60, 50);
 //        try {
 //            Thread.sleep(50000);
